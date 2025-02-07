@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Klasifikasi Rempah</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Warna khusus */
+        body {
+            background-color: #9BBB59;
+        }
+        .navbar {
+            background-color: #228B22; /* Hijau Daun */
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #fff !important;
+        }
+        .hero-section {
+            background: linear-gradient(to right, #fcff479c, #fcff479c); /* Gradasi oranye-merah */
+            color: rgb(0, 0, 0);
+            padding: 20px 0;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .btn-custom {
+            background-color: #228B22;
+            color: white;
+            border: none;
+            transition: background 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #1e7e34;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Klasifikasi Rempah - Rempah</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <h1 class="display-5">Klasifikasi Rempah dengan AI</h1>
+        <p class="lead">Upload gambar rempah dan sistem akan mengenali jenisnya!</p>
+    </div>
+
+    <!-- Form Upload -->
+    <div class="container text-center mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="/" method="post" enctype="multipart/form-data" class="p-4 bg-white rounded shadow">
+                    <h4 class="mb-3">Upload Gambar Rempah</h4>
+                    <input type="file" name="file" class="form-control mb-3">
+                    <button type="submit" class="btn btn-custom btn-lg">Upload & Prediksi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hasil Prediksi -->
+    {% if image %}
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ image }}" class="card-img-top" alt="Gambar yang diupload">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Prediksi: <strong>{{ rempah }}</strong></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Klasifikasi Rempah | Dibuat dengan ❤️ oleh Riska Nurhayan
+    </div>
+
+</body>
+</html>
