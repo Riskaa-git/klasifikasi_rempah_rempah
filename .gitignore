@@ -1,0 +1,15 @@
+# Ignore virtual environment
+venv/
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore model file
+model_rempah.h5
+
+# Ignore dataset (opsional)
+dataset/
+
+# Ignore image files (opsional)
+*.png
+
